@@ -9,6 +9,7 @@ public class MainProgram {
 			//create a random number for the user to guess
 			int theNumber = (int)(Math.random() * 100 + 1);
 			int guess = 0;
+			int numOfTries = 0;
 			while (guess != theNumber) {
 				System.out.println("Guess a number between 1 and 100:");
 				guess = sc.nextInt();
@@ -20,7 +21,9 @@ public class MainProgram {
 				} else {
 					System.out.println(guess + " is correct. You win!");
 				} 
+				numOfTries++;
 			}	// end of the loop 
+			System.out.println("It only took you " + numOfTries + " tries! Good work!");
 			System.out.println("Would you like to play again ? (y/n)?");
 			playAgain = sc.next();
 		} while (playAgain.equalsIgnoreCase("y"));
